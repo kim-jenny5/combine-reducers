@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { addAuthor } from "../actions";
 import uuid from "uuid";
+// import authorsReducer from "../reducers/authorsReducer";
 import { connect } from "react-redux";
 
 export class AuthorInput extends Component {
@@ -18,6 +19,7 @@ export class AuthorInput extends Component {
 		event.preventDefault();
 		const author = { ...this.state, id: uuid() };
 		this.props.addAuthor(author);
+		// this.props.authorsReducer(author);
 		this.setState({
 			authorName: ""
 		});
